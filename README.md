@@ -25,7 +25,7 @@ The `clj-gym.core` namespace follows OpenAI's
 > (g/envs)
 {"2f7eef5a" "CartPole-v0"}
 
-> (g/reset "2f7eef5a)
+> (g/reset "2f7eef5a")
 {:observation [0.023710455775827657 0.019351021639290936 0.011374305124354243 -0.016630857354495036]}
 
 > (g/step "2f7eef5a" 0)
