@@ -1,16 +1,19 @@
 (ns clj-gym.api
-  "API for interacting with OpenAI's HTTP server (gym-http-api)"
+  "API for interacting with OpenAI's HTTP server:
+  https://github.com/openai/gym-http-api/"
   (:require [clj-http.client :as http]
             [cheshire.core :as json]))
 
 (def ^:dynamic *url* "http://localhost:5000")
 
 (defn- req [method rel-url body & [kw?]]
-  (let [req (merge {:url (str *url* "/v1/envs/" rel-url)
-                    :method method
-                    :content-type :json :accept :json}
-                   (when body {:body (json/generate-string body)}))]
-    (-> (http/request req) :body (json/parse-string kw?))))
+  (-> (merge {:url (str *url* "/v1/envs/" rel-url)
+              :method method
+              :content-type :json :accept :json}
+             (when body {:body (json/generate-string body)}))
+      http/request
+      :body
+      (json/parse-string kw?)))
 
 (defn create
   "Create instance of environment."
