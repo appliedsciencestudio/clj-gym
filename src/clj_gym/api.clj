@@ -1,5 +1,5 @@
-(ns clj-gym.core
-  "Interact with OpenAI's gym-http-api server"
+(ns clj-gym.api
+  "API for interacting with OpenAI's HTTP server (gym-http-api)"
   (:require [clj-http.client :as http]
             [cheshire.core :as json]))
 
