@@ -7,9 +7,12 @@ Clojure bindings for OpenAI's
 
 With Leiningen/Boot:
 
-```
-[mthomure/clj-gym "0.1.1-SNAPSHOT"]
-```
+    [mthomure/clj-gym "0.1.1-SNAPSHOT"]
+
+With `deps.edn`:
+
+    mthomure/clj-gym {:mvn/version "0.1.1-SNAPSHOT"}
+
 
 ## Usage
 
