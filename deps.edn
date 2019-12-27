@@ -1,5 +1,5 @@
 ;; appliedsciencestudio/clj-gym "0.1.1-SNAPSHOT"
 {:paths ["resources" "src"]
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
-        clj-http {:mvn/version "2.3.0"}
-        cheshire {:mvn/version "5.6.3"}}}
+        clj-http {:mvn/version "3.10.0"}
+        cheshire {:mvn/version "5.9.0"}}}
