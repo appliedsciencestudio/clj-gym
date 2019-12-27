@@ -59,7 +59,7 @@ The server is available from DockerHub. To render a video and access it in the m
 docker run -p 5000:5000 -v /tmp:/tmp mthomure/openai-gym-server
 ```
 
-Then run in a repl:
+Then run in a REPL:
 
 ``` clojure
 (let [id (gym/create "CartPole-v0")]
