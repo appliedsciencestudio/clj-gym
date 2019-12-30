@@ -137,10 +137,12 @@
     (start-monitor! id {:directory "/tmp/monitor"
                         :force? true})
     (reset-env! id)
-    (dotimes [x 1000]
+    (loop [x 1000]
       (println "step #" x)
-      ;; TODO break out if `done` in last run
-      (step! id (rand-int num-actions) {:render? true}))
+      (let [rsp (step! id (rand-int num-actions) {:render? true})]
+        (if (and (pos? x) (not (:done rsp)))
+          (recur (dec x))
+          (println rsp))))
     (close-monitor! id))
   
   )
